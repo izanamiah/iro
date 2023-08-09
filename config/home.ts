@@ -1,6 +1,6 @@
 import { HomeConfig } from "@/types";
 
-export const marketingConfig: HomeConfig = {
+export const homeConfig: HomeConfig = {
   mainNav: [
     {
       title: "Features",

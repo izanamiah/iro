@@ -1,12 +1,12 @@
-import { ThemeProvider } from "@/providers/theme-provider";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { siteConfig } from "@/config/site";
-import { SiteFooter } from "@/components/footer";
 import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
+import "./globals.css";
+
+import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { cn } from "@/lib/utils";
+
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -81,8 +81,11 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          {/* <Analytics />
+          <Toaster /> */}
+          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>
